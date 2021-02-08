@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{%block head%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+<title>Spin Words</title>
+<meta name="description" content="Get a random word each spin! With the meaning and a translation to Spanish!">
+{%endblock%}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Zellius</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" target="blank" href="https://www.instagram.com/ibai_721/">Instagram</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="blank" href="https://twitter.com/Ibai110">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="blank" href="https://github.com/Zellius01">GitHub</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" action="/search" , method="POST">
+            <img class="search-icon" src="{{url_for('static', filename='media/icons/search.svg')}}">
+            <input class="form-control mr-sm-2 search-word" type="text" name="search-query" placeholder="Search a word"
+                aria-label="Search" required>
+            <button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="row mx-auto mt-5">
+        <div class="col text-center px-5">
+            <h1 class="title">Random Word</h1>
+
+
+        </div>
+    </div>
+    <div class="bg p-3 mt-5">
+        <div class="w-100"></div>
+        <div class="row mt-5">
+            <div class="col word-container">
+                <h1 class="m-0">{{word.capitalize()}}</h1>
+                <small>
+                    <a class="reference-link"
+                        href="https://dictionary.cambridge.org/dictionary/english-spanish/{{word}}"
+                        target="blank">Reference</a>
+                </small>
+            </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="row">
+
+            <div class="col-md-5 meanings mx-3 p-2">
+                <h3>Meanings</h3>
+                <ul>
+                    {%for definition in definitions%}
+                    <li class="elem-t">{{definition.capitalize()}}</li>
+                    {%endfor%}
+                </ul>
+            </div>
+
+            <div class="col-md-3 translations mx-3 p-2">
+                <h3>Translation</h3>
+                <p class="elem-t">{{translation.capitalize()}}</p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-5 text-center mx-auto p-5">
+                <a href="/"><button class="spin">Spin</button></a>
+                <span class="small-t">Generate new word!</span>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{url_for('static', filename='scripts/index.js')}}"></script>
+{% endblock%}

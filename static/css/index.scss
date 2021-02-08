@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+$blue-1: #0060fe;
+
+* {
+    font-family: 'Alata', sans-serif;
+}
+
+
+// HEADER
+
+.navbar {
+    border-bottom: 1px solid #eeeeee;
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,.05);
+
+    .nav-link {
+        color: #252525;
+        margin: 0 10px 0 10px;
+        text-decoration: none;
+        font-size: .8em;
+        margin-top: 3px;
+    }
+
+    .navbar-toggler {
+        border: none !important;
+        outline-color: #fafafa;
+    }
+}
+
+.search-icon {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    margin-left: 12px;
+    pointer-events: none;
+}
+
+.search-word {
+    font-size: .8em !important;
+    text-indent: 20px;
+    width: 250px !important;
+    border: 1px solid #e7e7e7 !important;
+}
+
+.search-btn {
+    font-size: .8em !important;
+}
+
+// BODY
+
+.meanings, .translations, .word-container {
+    padding: 1.5rem;
+}
+
+.container {
+
+
+    .row {
+        margin: 0 1.5rem 0 1.5rem;
+    }
+    
+    .bg{
+        background: #fafafa;
+        border-radius: 3em;
+    }
+    
+    h1, h2, h3 {
+        color: #000;
+        font-weight: bold;
+
+    }
+
+}
+
+.title {
+    font-size: 3.4rem;
+}
+
+.spin {
+    padding: 20px;
+    color: #fff;
+    outline: none !important;
+    width: 100%;
+    border: none;
+    border-radius: 3em;
+    font-weight: bold;
+    background-color: $blue-1;
+    font-size: 18px;
+    box-shadow: 0 12px 32px -12px rgba(0,84,222,.6);
+    margin-bottom: 20px;
+}
+
+.elem-t {
+    color: #646464;
+    font-weight: lighter;
+    font-family: Roboto, sans-serif !important;
+}
+
+.small-t {
+    color: #b1b1b1;
+    font-weight: lighter;
+    font-family: Roboto, sans-serif !important;
+}
