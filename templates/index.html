@@ -1,15 +1,17 @@
-{% extends 'base.html' %}
-
-{%block head%}
+{% extends 'base.html' %} {%block head%}
 <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
 <title>Spin Words</title>
+<meta name="title" content="Spin Words">
 <meta name="description" content="Get a random word each spin! With the meaning and a translation to Spanish!">
-{%endblock%}
-
-{% block body %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Zellius</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+<meta name="keywords" content="dictionary, word, words, english, spanish, language, translate, learn,  random, generate, website, web">
+<meta
+ name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
+<meta name="author" content="Ibai Farina (2006)"> {%endblock%} {% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-navbar">
+	<a class="navbar-brand" href="#">Zelliux</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,14 +25,14 @@
                 <a class="nav-link" target="blank" href="https://twitter.com/Ibai110">Twitter</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" target="blank" href="https://github.com/Zellius01">GitHub</a>
+                <a class="nav-link" target="blank" href="https://github.com/Zelliux">GitHub</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" action="/search" , method="POST">
             <img class="search-icon" src="{{url_for('static', filename='media/icons/search.svg')}}">
-            <input class="form-control mr-sm-2 search-word" type="text" name="search-query" placeholder="Search a word"
+            <input class="form-control search-word" type="text" name="search-query" placeholder="Search a word"
                 aria-label="Search" required>
-            <button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+            <button class="btn btn-dark my-2 my-sm-0 search-btn" type="submit">Search</button>
         </form>
     </div>
 </nav>
@@ -40,10 +42,9 @@
     <div class="row mx-auto mt-5">
         <div class="col text-center px-5">
             <h1 class="title">Random Word</h1>
-
-
         </div>
     </div>
+
     <div class="bg p-3 mt-5">
         <div class="w-100"></div>
         <div class="row mt-5">
@@ -74,7 +75,7 @@
             </div>
 
         </div>
-        <div class="row">
+        <div class="row mx-auto mt-5">
             <div class="col-md-5 text-center mx-auto p-5">
                 <a href="/"><button class="spin">Spin</button></a>
                 <span class="small-t">Generate new word!</span>
@@ -82,6 +83,29 @@
         </div>
     </div>
 </div>
+
+<div class="container text-container">
+  <div class="row mx-auto">
+    <div class="col-xl-10">
+      <h1><b>What is Spinwords?</b></h1>
+      <p><b>Spinwords</b> is a website designed to provide new words every time you
+         click the <b>Spin</b> button. 
+         <br>
+         You can also search for the specific word and show its definitions below.</p>
+         <p>It's important to learn new vocabulary sometimes. That's why I first created this website to practice myself, but then, I decided to publish it so everyone can use it to learn. </p>
+    </div>
+
+    <div class="col-xl-10">
+      <h1><b>How does it work?</b></h1>
+      <p>You can find the public repository of Spinwords on <a href="https://github.com/Zelliux/random_word" target="blank">GitHub</a>. It's an open source website.
+      <br>
+      It was made with <a href="https://www.python.org/" target="blank">Python</a>, 
+         a popular programming language.</p>
+    </div>
+
+  </div>
+ </div> 
+
 <br>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
