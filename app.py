@@ -1,5 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, session
-import os
+from flask import Flask, render_template, redirect, request
 import random
 from util.requests import get_url, find_all, find, convert_to_str
 
@@ -10,11 +9,13 @@ app = Flask(__name__)
 def index():
     if not return_all(randomize=True):
         return redirect('/')
-    
+
     else:
         word, translation, definitions = return_all(randomize=True)
 
-    return render_template('index.html', word=word, translation=translation, definitions=definitions)
+    return render_template('index.html', word=word, translation=translation,
+                           definitions=definitions)
+
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
@@ -29,17 +30,20 @@ def return_word(word):
 
     if not return_all(word):
         return render_template('error.html')
-    
+
     else:
         word, translation, definitions = return_all(word)
 
-    return render_template('index.html', word=word, translation=translation, definitions=definitions)
+    return render_template('index.html', word=word, translation=translation,
+                           definitions=definitions)
 
 
 i = 0
-def return_all(word=None, randomize:bool=None):
 
-    assert type(word) == str if randomize == None else True
+
+def return_all(word=None, randomize: bool = None):
+
+    assert type(word) == str if randomize is None else True
 
     # Get Word
     f = open('words.txt', 'r')
@@ -70,6 +74,5 @@ def return_all(word=None, randomize:bool=None):
     return [word, translation, definitions]
 
 
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

@@ -14,8 +14,12 @@ $blue-1: #0060fe;
     border-bottom: 1px solid #eeeeee;
     box-shadow: 0 2px 15px 0 rgba(0,0,0,.05);
 
+    .navbar-brand {
+      color: #f3f3f3 !important;
+    }
+
     .nav-link {
-        color: #252525;
+        color: #f3f3f3 !important;
         margin: 0 10px 0 10px;
         text-decoration: none;
         font-size: .8em;
@@ -24,8 +28,12 @@ $blue-1: #0060fe;
 
     .navbar-toggler {
         border: none !important;
-        outline-color: #fafafa;
+        outline-color: #f5f5f5;
     }
+}
+
+.bg-navbar {
+  background: $blue-1;
 }
 
 .search-icon {
@@ -40,11 +48,17 @@ $blue-1: #0060fe;
     font-size: .8em !important;
     text-indent: 20px;
     width: 250px !important;
+    height: 80% !important;
     border: 1px solid #e7e7e7 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
 }
 
 .search-btn {
+    height: 80% !important;
     font-size: .8em !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
 }
 
 // BODY
@@ -61,7 +75,7 @@ $blue-1: #0060fe;
     }
     
     .bg{
-        background: #fafafa;
+        background: #f5f5f5;
         border-radius: 3em;
     }
     
@@ -101,4 +115,16 @@ $blue-1: #0060fe;
     color: #b1b1b1;
     font-weight: lighter;
     font-family: Roboto, sans-serif !important;
+}
+
+
+.text-container {
+  margin-top: 10em;
+
+  p {
+    color: #646464;
+    font-weight: lighter;
+    font-family: Roboto, sans-serif !important;
+  }
+
 }
