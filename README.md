@@ -1,4 +1,7 @@
 # Spinwords
+---
+Update: I will archive this repository as it is outdated.
+---
 This is the repository for http://spinwords.herokuapp.com/
 
 Every time you reload the website it'll show you a different word with its meaning(s) and translation.
